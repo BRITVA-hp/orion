@@ -1,1 +1,25 @@
-// @media screen and ( max-width: 1600px )
+@media screen and ( max-width: 1200px )
+    .header
+        &__phone
+            font-size: 15px
+        &__logo
+            margin-right: 10px
+        &__text
+            font-size: 12px
+            padding-bottom: 10px
+        &__link
+            margin-right: 20px
+
+@media screen and ( max-width: 991px )
+    .menu
+        display: flex
+
+    .header
+        &__burger
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+        &__logo
+            margin-right: 0
+        &__phone, &__nav, &__text
+            display: none
