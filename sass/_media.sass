@@ -1,5 +1,6 @@
 @media screen and ( max-width: 1200px )
     .header
+        margin-bottom: -84px
         &__phone
             font-size: 15px
         &__logo
@@ -11,6 +12,49 @@
             margin-right: 20px
 
 @media screen and ( max-width: 991px )
+    .advantages
+        background: url(../img/advantages/bg.png) no-repeat center bottom
+        &__card
+            margin-bottom: 68px
+        &__row
+            flex-wrap: wrap
+            max-width: 436px
+            margin: auto
+
+    .main
+        padding-bottom: 270px
+        margin-bottom: -150px
+        &__wrap
+            margin-bottom: 20px
+        &__card
+            max-width: 240px
+            margin-right: 20px
+            &__box
+                max-width: none
+            &__text
+                font-size: 13px
+            &__title
+                font-size: 13px
+            &__img
+                min-width: 55px
+                height: 55px
+        &__text
+            font-size: 15px
+        &__button
+            padding: 23px 0
+            width: 246px
+            font-size: 16px
+        &__item
+            font-size: 11px
+            padding: 14px 26px
+            margin-right: 12px
+            margin-bottom: 12px
+        &__title
+            font-size: 44px
+        &__container
+            background: url(../img/main/imgM.png) no-repeat 80% top
+            padding-top: 50px
+
     .menu
         display: flex
 
@@ -23,3 +67,76 @@
             margin-right: 0
         &__phone, &__nav, &__text
             display: none
+
+@media screen and ( max-width: 767px )
+    .advantages
+        background: url(../img/advantages/bgM.png) no-repeat center top
+        padding-top: 80px
+        overflow: hidden
+
+    .main
+        padding-top: 20px
+        padding-bottom: 30px
+        background: url(../img/main/bgM.png) no-repeat center
+        margin-bottom: -30px
+        &__card
+            margin-right: 0
+            margin-bottom: 25px
+        &__footer
+            flex-direction: column
+            align-items: center
+        &__text
+            text-align: center
+        &__button
+            margin-bottom: 18px
+            margin-right: 0
+        &__button-wrap
+            flex-direction: column
+        &__wrap
+            flex-direction: column-reverse
+            align-items: center
+        &__item
+            margin-right: 0
+            text-align: center
+        &__box
+            margin-left: auto
+            margin-right: auto
+        &__title
+            text-align: center
+        &__img
+            display: block
+            margin-bottom: -20px
+        &__container
+            background: none
+
+@media screen and ( max-width: 575px )
+    .advantages
+        padding-top: 120px
+        padding-left: 0
+        padding-right: 0
+        &__row
+            max-width: 386px
+            min-width: 370px
+        &__card
+            width: 185px
+            height: 194px
+            &__img
+                &--1
+                    transform: translate(30%, -70%)
+                &--2
+                    display: none
+                &--4
+                    display: block
+                    transform: translate(50%, -60%)
+            &__text
+                font-size: 12px
+                max-width: 108px
+            &__content
+                padding: 20px 25px
+
+@media screen and ( max-height: 750px )
+    .menu
+        &__dialog
+            padding: 100px 50px 50px
+        &__logo
+            margin-bottom: 40px

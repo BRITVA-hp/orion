@@ -1,0 +1,48 @@
+@for $i from 1 to 5
+    $val: ($i - 1) * 26
+    .advantages__card:nth-child(#{$i})
+        z-index: $i
+        transform: translateY(-#{$val}px)
+    
+.advantages
+    &__container
+        max-width: 1110px
+    &__card
+        position: relative
+        width: 208px
+        height: 218px
+        background: #FFFFFF
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1)
+        border-radius: 20px
+        padding: 5px
+        &__text
+            font-style: normal
+            font-weight: 500
+            font-size: 14px
+            line-height: 120%
+            color: #323232
+            max-width: 122px
+        &__logo
+            margin-bottom: 25px
+        &__content
+            position: relative
+            z-index: 1
+            width: 100%
+            height: 100%
+            border: 2px dashed #0385CA
+            filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.1))
+            border-radius: 20px
+            padding: 25px 20px 20px 30px
+        &__img
+            position: absolute
+            z-index: 2
+            right: 0
+            top: 0
+            &--1
+                transform: translate(50%, -30%)
+            &--2
+                transform: translate(80%, 0)
+            &--3
+                transform: translate(70%, -35%)
+            &--4
+                display: none
