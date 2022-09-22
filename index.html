@@ -146,38 +146,67 @@
 
         <section class="section calc">
             <picture class="calc__img calc__img--1">
-                <source media="(max-width: 991px)" srcset="img/calc/img1M.png">
+                <source media="(max-width: 1200px)" srcset="img/calc/img1M.png">
                 <img src="img/calc/img1.png" alt="image">
             </picture>
             <div class="container calc__container">
                 <div class="calc__box">
                     <picture class="calc__img calc__img--2">
-                        <source media="(max-width: 991px)" srcset="img/calc/img2M.png">
+                        <source media="(max-width: 1200px)" srcset="img/calc/img2M.png">
                         <img src="img/calc/img2.png" alt="image">
                     </picture>
-                    <h3 class="calc__title">Калькулятор кредита <br> без предоплаты</h3>
+                    <h3 class="calc__title section__title">Калькулятор кредита <br> без предоплаты</h3>
                     <div class="row calc__row">
 
-                        <div class="calc__wrap">
-                            <p class="calc__box__title">Процент одобрения кредита: 95%</p>
+                        <div class="calc__wrap calc__wrap--1">
+                            <p class="calc__wrap__title">Процент одобрения кредита: <span>95%</span></p>
 
                             <div class="calc__block">
                                 <p class="calc__block__title">Сумма кредита, ₽</p>
-                                <div class="calc__field">
-                                    <span class="calc__field__text calc__field__text--1">100000</span>
-                                    <span class="calc__field__rub">₽</span>
-                                </div>
+                                <input value="100000" type="text" class="calc__field calc__field--1">
+                                <span class="calc__field__text">₽</span>
                                 <div class="calc__range-box">
                                     <div class="calc__range">
                                         <div class="calc__range-min-val">100 тыс.</div>
                                         <span class="calc__range__track calc__range__track--1">
                                         </span>
-                                        <input class="calc__range__input calc__range__input--1" type="range" min="100000" max="15000000" value="100000" step="1">
+                                        <input class="calc__range__input calc__range__input--1" type="range" min="100000" max="15000000" value="15000000" step="1">
                                         <div class="calc__range-max-val">15 млн.</div>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="calc__block calc__block">
+                                <p class="calc__block__title">Выберите срок кредита</p>
+                                <input value="1" type="text" class="calc__field calc__field--2">
+                                <span class="calc__field__text">лет</span>
+                                <div class="calc__range-box">
+                                    <div class="calc__range">
+                                        <div class="calc__range-min-val">1 год</div>
+                                        <span class="calc__range__track calc__range__track--2">
+                                        </span>
+                                        <input class="calc__range__input calc__range__input--2" type="range" min="1" max="10" value="1" step="1">
+                                        <div class="calc__range-max-val">10 лет</div>
+                                    </div>
+                                </div>
+                            </div>
                             
+                        </div>
+
+                        <div class="calc__wrap calc__wrap--2">
+                            <p class="calc__wrap__title"><span>наше предложение</span></p>
+                            <div class="row calc__wrap__row">
+                                <div class="calc__wrap__card">
+                                    <p class="calc__wrap__card__title"><span>4 694</span> ₽</p>
+                                    <p class="calc__wrap__card__text">Ежемесячный платеж</p>
+                                </div>
+                                <div class="calc__wrap__card">
+                                    <p class="calc__wrap__card__title">4%</p>
+                                    <p class="calc__wrap__card__text">Процентная ставка</p>
+                                </div>
+                            </div>
+                            <div class="calc__wrap__text">Расчет калькулятора произведен по ставкам, действующим при условии оформления финансовой защиты к кредиту. Не является публичной офертой.</div>
+                            <button class="button calc__button">заполнить заявку</button>
                         </div>
 
                     </div>

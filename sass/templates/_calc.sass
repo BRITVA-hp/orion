@@ -1,5 +1,62 @@
 .calc
     position: relative
+    overflow: hidden
+    padding-top: 100px
+    &__row
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            width: 1px
+            height: 100%
+            left: calc(50% + 30px)
+            top: 0
+            background: linear-gradient(to bottom, transparent, #323232, transparent)
+    &__button
+        width: 330px
+    &__wrap
+        width: 50%
+        &--2
+            padding-left: 80px
+        &__row
+            margin-bottom: 44px
+        &__text
+            font-style: normal
+            font-weight: 300
+            font-size: 15px
+            line-height: 100%
+            color: #494C50
+            margin-bottom: 35px
+        &__card
+            width: 50%
+            margin-right: 10px
+            &:last-child
+                margin-right: 0
+            &__title
+                font-style: normal
+                font-weight: 800
+                font-size: 35px
+                line-height: 100%
+                color: #020202
+                margin-bottom: 10px
+            &__text
+                font-style: normal
+                font-weight: 400
+                font-size: 15px
+                line-height: 100%
+                color: #323232
+        &__title
+            font-style: normal
+            font-weight: 500
+            font-size: 15px
+            line-height: 120%
+            text-transform: uppercase
+            margin-bottom: 60px
+            span
+                font-weight: 800
+    &__title
+        text-align: left
+        margin-bottom: 27px
     &__img
         position: absolute
         &--1
@@ -9,8 +66,21 @@
             transform: translateX(-235%)
         &--2
             z-index: 2
+            right: -80px
+            top: -100px
     &__block
         width: 455px
+        margin-bottom: 50px
+        position: relative
+        &--last
+            margin-bottom: 0
+        &__title
+            margin-bottom: 17px
+            font-style: normal
+            font-weight: normal
+            font-size: 15px
+            line-height: 100%
+            color: #323232
     &__box
         background: #9ACEEA
         border-radius: 50px
@@ -23,11 +93,21 @@
         font-size: 39px
         line-height: 100%
         color: #000000
-        display: flex
-        justify-content: space-between
         padding: 20px 30px 15px
         background: #FFFFFF
         border-radius: 12px 12px 0px 0px
+        width: 100%
+        border: none
+        &:focus
+            outline: none
+        &__text
+            position: absolute
+            right: 30px
+            bottom: 15px
+            font-weight: normal
+            font-size: 39px
+            line-height: 100%
+            color: #000000
     &__range-box
         width: 100%
 
