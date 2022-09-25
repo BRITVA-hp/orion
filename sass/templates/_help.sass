@@ -1,0 +1,44 @@
+.help
+    position: relative
+    background: url(../img/help/bgTop.png) no-repeat center top, url(../img/help/bgBottom.png) no-repeat center bottom, linear-gradient(to bottom, #fff 577px, #D9EDF7 577px calc(100% - 311px), #fff calc(100% - 311px))
+    padding-top: 650px
+    margin-top: -500px
+    padding-bottom: 308px
+    overflow: hidden
+    &__card
+        height: 195px
+        background: #fff
+        border-radius: 20px
+        color: #323232
+        transition: 0.3s
+        padding: 35px 33px
+        cursor: pointer
+        &__text
+            font-style: normal
+            font-weight: 500
+            font-size: 15px
+            line-height: 120%
+            text-transform: uppercase
+        &__img
+            margin-bottom: 38px
+        &:hover
+            color: #fff
+            background: #0385CA
+            path
+                fill: #fff
+    &__row
+        display: grid
+        grid-template-columns: repeat(auto-fill, 260px)
+        grid-gap: 40px
+        justify-content: center
+    &__title
+        max-width: 578px
+        margin-bottom: 84px
+    &__img
+        position: absolute
+        &--1
+            right: calc( 50% - 750px )
+            top: 650px
+        &--2
+            bottom: 0
+            left: calc( 50% - 800px )

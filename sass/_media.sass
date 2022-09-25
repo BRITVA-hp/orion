@@ -1,4 +1,12 @@
 @media screen and ( max-width: 1200px )
+    .help
+        &__img
+            &--1
+                top: 800px
+                right: calc( 50% - 500px )
+            &--2
+                left: calc( 50% - 300px )
+
     .calc
         &__row
             &::before
@@ -6,7 +14,7 @@
         &__block
             width: 100%
         &__box
-            padding: 40px 60px
+            padding: 40px
         &__img
             &--2
                 right: -10px
@@ -29,6 +37,21 @@
             margin-right: 20px
 
 @media screen and ( max-width: 991px )
+    .help
+        margin-top: -270px
+        padding-top: 370px
+        padding-bottom: 270px
+        &__title
+            font-size: 44px
+            margin-bottom: 55px
+        &__row
+            grid-gap: 25px
+        &__img
+            &--1
+                right: 0
+            &--2
+                left: 0
+    
     .calc
         &__button
             width: 100%
@@ -171,6 +194,14 @@
             background: none
 
 @media screen and ( max-width: 575px )
+    .help
+        &__img
+            &--2
+                left: -50px
+            &--1
+                top: 1000px
+                right: -50px
+
     .calc
         &__field
             padding: 10px 20px

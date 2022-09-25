@@ -836,11 +836,12 @@ body {
   margin-bottom: 35px;
 }
 .calc__wrap__card {
-  width: 50%;
+  width: 60%;
   margin-right: 10px;
 }
 .calc__wrap__card:last-child {
   margin-right: 0;
+  width: 40%;
 }
 .calc__wrap__card__title {
   font-style: normal;
@@ -1004,6 +1005,62 @@ body {
   color: #425A66;
 }
 
+.help {
+  position: relative;
+  background: url(../img/help/bgTop.png) no-repeat center top, url(../img/help/bgBottom.png) no-repeat center bottom, linear-gradient(to bottom, #fff 577px, #D9EDF7 577px calc(100% - 311px), #fff calc(100% - 311px));
+  padding-top: 650px;
+  margin-top: -500px;
+  padding-bottom: 308px;
+  overflow: hidden;
+}
+.help__card {
+  height: 195px;
+  background: #fff;
+  border-radius: 20px;
+  color: #323232;
+  transition: 0.3s;
+  padding: 35px 33px;
+  cursor: pointer;
+}
+.help__card__text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.help__card__img {
+  margin-bottom: 38px;
+}
+.help__card:hover {
+  color: #fff;
+  background: #0385CA;
+}
+.help__card:hover path {
+  fill: #fff;
+}
+.help__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 260px);
+  grid-gap: 40px;
+  justify-content: center;
+}
+.help__title {
+  max-width: 578px;
+  margin-bottom: 84px;
+}
+.help__img {
+  position: absolute;
+}
+.help__img--1 {
+  right: calc(50% - 750px);
+  top: 650px;
+}
+.help__img--2 {
+  bottom: 0;
+  left: calc(50% - 800px);
+}
+
 .modal {
   position: fixed;
   z-index: 199;
@@ -1028,6 +1085,7 @@ body {
 
 .menu {
   position: fixed;
+  z-index: 198;
   left: 0;
   right: 0;
   top: 0;
@@ -1102,6 +1160,13 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
+  .help__img--1 {
+    top: 800px;
+    right: calc(50% - 500px);
+  }
+  .help__img--2 {
+    left: calc(50% - 300px);
+  }
   .calc__row::before {
     left: calc(50% + 40px);
   }
@@ -1109,7 +1174,7 @@ body {
     width: 100%;
   }
   .calc__box {
-    padding: 40px 60px;
+    padding: 40px;
   }
   .calc__img--2 {
     right: -10px;
@@ -1138,6 +1203,24 @@ body {
   }
 }
 @media screen and (max-width: 991px) {
+  .help {
+    margin-top: -270px;
+    padding-top: 370px;
+    padding-bottom: 270px;
+  }
+  .help__title {
+    font-size: 44px;
+    margin-bottom: 55px;
+  }
+  .help__row {
+    grid-gap: 25px;
+  }
+  .help__img--1 {
+    right: 0;
+  }
+  .help__img--2 {
+    left: 0;
+  }
   .calc__button {
     width: 100%;
     font-size: 16px;
@@ -1317,6 +1400,13 @@ body {
   }
 }
 @media screen and (max-width: 575px) {
+  .help__img--2 {
+    left: -50px;
+  }
+  .help__img--1 {
+    top: 1000px;
+    right: -50px;
+  }
   .calc__field {
     padding: 10px 20px;
     font-size: 30px;
