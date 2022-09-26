@@ -1,4 +1,53 @@
 @media screen and ( max-width: 1200px )
+    .fast
+        &__row
+            flex-direction: column
+            align-items: center
+        &__card
+            &:nth-child(1)
+                margin-bottom: 40px
+
+    .steps
+        padding: 0
+        &__title
+            margin-bottom: 80px
+        &__row
+            flex-wrap: wrap
+            justify-content: center
+        &__card
+            margin: 20px
+        &__img
+            &--1
+                left: 0
+            &--2
+                right: 0
+                bottom: 180px
+
+    .we
+        &__container
+            background: url(../img/we/img1.png) no-repeat calc(100% + 50px) top
+        &__card
+            &__img
+                right: -32px
+                top: 110px
+
+    .terms
+        &__row
+            max-width: 760px
+            margin: auto
+            &--center
+                display: flex
+                margin-bottom: 40px
+            &--1
+                .terms__card
+                    &:nth-child(3)
+                        display: none
+                    
+            &--2
+                .terms__card
+                    &:nth-child(3)
+                        display: none
+
     .help
         &__img
             &--1
@@ -37,6 +86,96 @@
             margin-right: 20px
 
 @media screen and ( max-width: 991px )
+    .faq
+        &__title
+            font-size: 44px
+            margin-bottom: 45px
+        &__item
+            padding-bottom: 25px
+            &--active
+                padding-bottom: 33px
+                .faq__item__header
+                    margin-bottom: 15px
+            &__title
+                font-size: 16px
+                margin-right: 30px
+            &__content
+                font-size: 16px
+
+    .fast
+        padding-top: 230px
+        margin-top: -100px
+        margin-bottom: 0
+        &__row
+            flex-direction: row
+            flex-wrap: wrap
+            justify-content: center
+        &__card
+            padding: 60px 30px 40px
+            width: 100%
+            max-width: 360px
+            margin: 12px !important
+            &__title
+                font-size: 30px
+                margin-bottom: 30px
+            &__text
+                font-size: 18px
+            &__box
+                margin-top: 30px
+                padding: 28px 18px
+                .fast__card__text
+                    font-size: 15px
+        &__title
+            font-size: 44px
+            margin-bottom: 40px
+
+    .steps
+        &__subtitle
+            font-size: 20px
+            max-width: 450px
+            margin-bottom: 50px
+        &__card
+            margin: 12px
+        &__title
+            font-size: 44px
+            margin-bottom: 38px
+
+    .we
+        padding-top: 140px
+        padding-bottom: 280px
+        margin-bottom: -150px
+        &__card
+            padding: 7px 5px
+            &__title
+                font-size: 35px
+                margin-bottom: 22px
+            &__text
+                font-size: 20px
+                margin-bottom: 42px
+            &__content
+                padding: 38px 25px 120px
+        &__box
+            margin: auto
+            margin-bottom: 60px
+            max-width: none
+        &__container
+            background: none
+            padding: 0
+        &__title
+            font-size: 44px
+            text-align: center
+            margin-bottom: 25px
+
+    .terms
+        margin-bottom: 50px
+        &__row
+            max-width: 720px
+        &__card
+            max-width: 340px
+        &__title
+            font-size: 44px
+            margin-bottom: 47px
+
     .help
         margin-top: -270px
         padding-top: 370px
@@ -153,6 +292,32 @@
             display: none
 
 @media screen and ( max-width: 767px )
+    .we
+        padding-bottom: 200px
+        margin-bottom: -80px
+        &__card
+            &__img
+                top: auto
+                bottom: -100px
+
+    .terms
+        &__card
+            transform: none !important
+            margin-bottom: 30px
+            display: block !important
+            &:last-child
+                margin-bottom: 0
+        &__row
+            flex-direction: column
+            align-items: center
+            transform: none
+            margin-bottom: 30px
+            &--center
+                display: none
+            &--2
+                display: flex
+                margin-bottom: 0
+
     .advantages
         background: url(../img/advantages/bgM.png) no-repeat center top
         padding-top: 80px
@@ -194,6 +359,48 @@
             background: none
 
 @media screen and ( max-width: 575px )
+    .fast
+        padding-left: 0
+        padding-right: 0
+        &__title
+            padding: 0 20px
+    
+    .steps
+        &__subtitle
+            padding: 0 20px
+        &__title
+            max-width: 200px
+        &__button
+            width: 100%
+            max-width: 300px
+        &__card
+            &:nth-child(3)
+                .steps__card__text
+                    max-width: 200px
+        &__img
+            &--1
+                left: -30px
+            &--2
+                bottom: 180px
+        &__row
+            margin-bottom: 100px
+
+    .we
+        padding-bottom: 104px
+        margin-bottom: 70px
+        &__card
+            border-radius: 20px
+            &__content
+                border-radius: 20px
+            &__button
+                width: 100%
+            &__img
+                width: 347px
+                left: 50%
+                right: auto
+                transform: translateX(-50%)
+                bottom: -180px
+
     .help
         &__img
             &--2

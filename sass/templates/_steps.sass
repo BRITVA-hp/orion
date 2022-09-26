@@ -1,0 +1,71 @@
+.steps
+    position: relative
+    overflow: hidden
+    &__row
+        margin-bottom: 86px
+    &__button
+        display: block
+        width: 365px
+        margin: auto
+    &__subtitle
+        font-style: normal
+        font-weight: normal
+        font-size: 30px
+        line-height: 120%
+        text-align: center
+        text-transform: uppercase
+        color: #000000
+        max-width: 717px
+        margin: auto
+        margin-bottom: 60px
+    &__container
+        position: relative
+        z-index: 2
+    &__img
+        position: absolute
+        &--1
+            z-index: 1
+            top: -50px
+            left: calc( 50% - 600px )
+        &--2
+            z-index: 3
+            right: calc(50% - 795px)
+            bottom: -40px
+    &__title
+        margin-bottom: 100px
+    &__card
+        width: 360px
+        height: 277px
+        background: rgba(3, 133, 202, 0.5)
+        border: 1px solid rgba(0, 0, 0, 0.1)
+        backdrop-filter: blur(7.5px)
+        border-radius: 20px
+        padding: 36px
+        &__step
+            display: inline-block
+            background: rgba(3, 133, 202, 0.5)
+            border: 2px solid #0385CA
+            border-radius: 50px
+            font-style: normal
+            font-weight: 500
+            font-size: 18px
+            line-height: 100%
+            text-transform: uppercase
+            color: #FFFFFF
+            padding: 8px 18px
+            margin-bottom: 46px
+        &__title
+            font-style: normal
+            font-weight: 500
+            font-size: 20px
+            line-height: 120%
+            text-transform: uppercase
+            color: #000000
+            margin-bottom: 24px
+        &__text
+            font-style: normal
+            font-weight: normal
+            font-size: 18px
+            line-height: 100%
+            color: #000000
+            max-width: 250px

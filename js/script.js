@@ -84,12 +84,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 rangeTrack.style.width = `${100 / (max - step) * (this.value - step)}%`;
                 val_ = this.value   
             }
-            reverse ? result.textContent = getPayment(periodOrSum_, val, 4) : result.textContent = getPayment(this.value, periodOrSum_, 4)
+            reverse ? result.textContent = getPayment(periodOrSum_, this.value, 4) : result.textContent = getPayment(this.value, periodOrSum_, 4)
         })
     }
 
     range(".calc__range__input--1", ".calc__range__track--1", ".calc__field--1", '.calc__wrap__card__title--1 span', ".calc__range__input--2")
     range(".calc__range__input--2", ".calc__range__track--2", ".calc__field--2", '.calc__wrap__card__title--1 span', ".calc__range__input--1", true)
+
+    //faq
+    const tabs = document.querySelectorAll('.faq__item')
+    const tabsTriggers = document.querySelectorAll('.faq__item__header')
+    const tabsContents = document.querySelectorAll('.faq__item__content')
+
+    tabsTriggers.forEach((trigger, triggerIndex, array) => {
+        trigger.addEventListener('click', () => {
+            tabs[triggerIndex].classList.toggle('faq__item--active')
+            if (tabs[triggerIndex].classList.contains('faq__item--active')) {
+                tabsContents[triggerIndex].style.height= tabsContents[triggerIndex].scrollHeight + 'px'
+            } else {
+                tabsContents[triggerIndex].style = ''
+            }
+        })
+    })
 
 
 })

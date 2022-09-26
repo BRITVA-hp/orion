@@ -1,0 +1,94 @@
+.terms
+    margin-bottom: 75px
+    &__row
+        flex-wrap: wrap
+        &--center
+            display: none
+            align-items: flex-end
+            transform: translateY(-14px)
+            .terms__card
+                &:nth-child(1)
+                    .terms__card__img
+                        margin-bottom: 24px
+                    .terms__card__content
+                        transform: translateY(-30px)
+                &:nth-child(2)
+                    transform: translateY(54px)
+                    .terms__card__content
+                        transform: translateY(-42px)
+        &--1
+            .terms__card
+                &:nth-child(1)
+                    height: 308px
+                &:nth-child(2)
+                    .terms__card__content
+                        transform: translateY(-40px)
+                &:nth-child(3)
+                    .terms__card__img
+                        margin-bottom: 24px
+                    .terms__card__content
+                        transform: translateY(-30px)
+                    
+        &--2
+            align-items: flex-end
+            transform: translateY(-14px)
+            .terms__card
+                &:nth-child(1)
+                    .terms__card__img
+                        margin-bottom: 22px
+                    .terms__card__content
+                        transform: translateY(-27px)
+                &:nth-child(2)
+                    height: 308px
+                    .terms__card__img
+                        margin-bottom: 6px
+                    .terms__card__content
+                        transform: translateY(-58px)
+                &:nth-child(3)
+                    height: 308px
+                    .terms__card__content
+                        transform: translateY(-42px)
+    &__title
+        margin-bottom: 110px
+    &__ul
+        list-style-type: none
+        font-style: normal
+        font-weight: 300
+        font-size: 15px
+        line-height: 120%
+        color: #323232
+        max-width: 240px
+        margin: auto
+    &__li
+        display: flex
+        align-items: flex-start
+        margin-bottom: 5px
+        &:last-child
+            margin-bottom: 0
+        img
+            margin-right: 5px
+    &__card
+        background: rgba(255, 255, 255, 0.5)
+        border: 1px solid rgba(0, 0, 0, 0.1)
+        box-shadow: 0px 0px 10px -3px rgba(3, 133, 202, 0.15)
+        backdrop-filter: blur(15px)
+        border-radius: 20px
+        width: 100%
+        max-width: 360px
+        height: 362px
+        padding: 0 20px 20px
+        &__title
+            font-style: normal
+            font-weight: 700
+            font-size: 20px
+            line-height: 120%
+            text-transform: uppercase
+            color: #323232
+            max-width: 240px
+            margin: auto
+            margin-bottom: 25px
+        &__img
+            display: block
+            margin: auto
+            margin-bottom: 10px
+            
