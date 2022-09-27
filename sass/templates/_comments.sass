@@ -1,0 +1,98 @@
+.comments
+    background: #D9EDF7
+    padding: 0 10px
+    padding-bottom: 300px
+    margin-bottom: -200px
+    &__progress
+        display: none
+        width: calc(100% - 40px)
+        margin: auto
+        height: 2px
+        background: rgba(3, 133, 202, 0.6)
+        border-radius: 2px
+        position: relative
+        &__inner
+            height: 6px
+            border-radius: 3px
+            position: absolute
+            top: -2px
+            left: 0
+            background: #0385CA
+            transition: 0.3s
+    &__wrap
+        width: 100%
+        position: relative
+        padding: 0 70px
+    &__arrow
+        position: absolute
+        width: 60px
+        height: 60px
+        border-radius: 50%
+        top: 50%
+        transform: translateY(-50%)
+        cursor: pointer
+        &--inactive
+            opacity: 0.4
+        &--prev
+            background: url(../img/comments/prev.png) no-repeat center, rgba(3, 133, 202, 0.3)
+            left: 0
+        &--next
+            background: url(../img/comments/next.png) no-repeat center, rgba(3, 133, 202, 0.3)
+            right: 0
+    &__container
+        max-width: 1362px
+    &__window
+        max-width: 1160px
+        margin: auto
+        overflow: hidden
+    &__field
+        display: flex
+        transition: 0.3s
+    &__title
+        margin-bottom: 76px
+    &__card
+        min-width: 560px
+        min-height: 520px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        background: #FFFFFF
+        border-radius: 30px
+        padding: 50px 60px 38px
+        margin-right: 40px
+        &:last-child
+            margin-right: 0
+        &__date
+            font-style: normal
+            font-weight: nornal
+            font-size: 20px
+            line-height: 120%
+            color: rgba(0, 0, 0, 0.8)
+        &__box
+            margin-bottom: 20px
+        &__text
+            font-style: normal
+            font-weight: normal
+            font-size: 20px
+            line-height: 120%
+            color: rgba(0, 0, 0, 0.8)
+        &__name
+            font-style: normal
+            font-weight: 500
+            font-size: 25px
+            line-height: 120%
+            text-transform: uppercase
+            color: #000000
+        &__img
+            width: 100px
+            height: 100px
+            display: flex
+            justify-content: center
+            align-items: center
+            overflow: hidden
+            border-radius: 50%
+            margin-right: 40px
+        &__header
+            display: flex
+            align-items: center
+            margin-bottom: 45px

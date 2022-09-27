@@ -107,5 +107,251 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     })
 
+    //video
+    function video(triggers, _video, _modalVideo, _modalVideoClose) {
+        const play = document.querySelectorAll(triggers),
+            video = document.querySelector(_video),
+            modalVideo = document.querySelector(_modalVideo),
+            modalVideoClose = document.querySelector(_modalVideoClose);
+
+        play.forEach(item => {
+            item.addEventListener('click', (e) => {
+                const path = e.currentTarget.getAttribute('data-video');
+                modalVideo.classList.add('modal--active');
+                document.body.style.overflow = 'hidden';
+                video.setAttribute('src', path);
+                video.play();
+            });
+        });
+
+        modalVideo.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal__container')) {
+                modalVideo.classList.remove('modal--active');
+                video.pause();
+                document.body.style.overflow = '';
+            }
+        });
+        modalVideoClose.addEventListener('click', () => {
+            modalVideo.classList.remove('modal--active');
+            video.pause();
+            document.body.style.overflow = '';
+        })
+    }
+
+    video('.reviews__card__play', '#video', '.modal-video', '.modal-video__close');
+
+
+    //slider
+    function slider(window, field, cards, dotsWrap, dotClass, dotClassActive, arrowPrev, arrowNext, arrowClass, progress) {
+        const window_ = document.querySelector(window),
+            field_ = document.querySelector(field),
+            cards_ = document.querySelectorAll(cards),
+            arrowPrev_ = document.querySelector(arrowPrev),
+            arrowNext_ = document.querySelector(arrowNext),
+            progress_ = document.querySelector(progress);
+
+        let startPoint,
+            swipeAction,
+            endPoint,
+            sliderCounter = 0,
+            dots_ = [];
+
+        // Устанавливаем фиксированную ширину поля слайдов
+
+        // field_.style.width = `${cardWidth * cards_.length + (margin * (cards_.length - 1))}px`;
+        // field_.style.marginLeft = 'auto';
+        // field_.style.marginRight = 'auto';
+        // field_.style.display = 'flex';
+
+        //Устанавливаем ширину бегунка прогресс-бара
+        progress_.style.width = 100 / cards_.length + '%'
+
+        //Вычисление нужного свойство у элемента (у нас margin-right)
+
+        function getCompStyle(elem, property) {
+            return +getComputedStyle(elem)[property].replace(/\D/g, '')
+        }
+
+        // Слайд следующий
+
+        function slideNext() {
+            sliderCounter++;
+            arrowNext_.classList.remove(arrowClass);
+            arrowPrev_.classList.remove(arrowClass);
+            if (sliderCounter >= cards_.length) {
+                sliderCounter = cards_.length - 1;
+            }
+            if ((sliderCounter + 1) == cards_.length) {
+                arrowNext_.classList.add(arrowClass);
+            }
+            if (dotsWrap) {
+                dots_.forEach((item, index)=> {
+                item.classList.remove(dotClassActive);
+                if (index == sliderCounter) {
+                    item.classList.add(dotClassActive);
+                }
+                });
+            }
+            field_.style.transform = `translateX(-${(cards_[0].scrollWidth + getCompStyle(cards_[0], 'marginRight')) * sliderCounter}px)`;
+            progress_.style.left = (100 / cards_.length) * sliderCounter + '%'
+        }
+
+        // Слайд предыдущий
+
+        function slidePrev() {
+            sliderCounter--;
+            arrowNext_.classList.remove(arrowClass);
+            arrowPrev_.classList.remove(arrowClass);
+            if (sliderCounter <= 0) {
+                sliderCounter = 0;
+            }
+            if (sliderCounter == 0) {
+                arrowPrev_.classList.add(arrowClass);
+            }
+            if (dotsWrap) {
+                dots_.forEach((item, index)=> {
+                    item.classList.remove(dotClassActive);
+                    if (index == sliderCounter) {
+                        item.classList.add(dotClassActive);
+                    }
+                });
+            }
+            field_.style.transform = `translateX(-${(cards_[0].scrollWidth + getCompStyle(cards_[0], 'marginRight')) * sliderCounter}px)`;
+            progress_.style.left = (100 / cards_.length) * sliderCounter + '%'
+        }
+
+        // Рендер точек
+
+        if (dotsWrap) {
+            const dotsWrap_ = document.querySelector(dotsWrap);
+
+            cards_.forEach(() => {
+                const dot = document.createElement('div');
+                dot.classList.add(dotClass);
+                dotsWrap_.appendChild(dot);
+                dots_.push(dot);
+            });
+            dots_[0].classList.add(dotClassActive);
+            dots_.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    sliderCounter = index;
+                    arrowNext_.classList.remove(arrowClass);
+                    arrowPrev_.classList.remove(arrowClass);
+                    if (sliderCounter == 0) {
+                        arrowPrev_.classList.add(arrowClass);
+                    }
+                    if ((sliderCounter + 1) == cards_.length) {
+                        arrowNext_.classList.add(arrowClass);
+                    }
+                    dots_.forEach(item_ => {
+                        item_.classList.remove(dotClassActive);
+                    });
+                    item.classList.add(dotClassActive);
+                    field_.style.transform = `translateX(-${(cards_[0].scrollWidth + getCompStyle(cards_[0], 'marginRight')) * sliderCounter}px)`;
+                });
+            });
+        }
+
+        // Переключение на стрелки
+
+        arrowPrev_.addEventListener('click', () => {
+            slidePrev();
+        });
+
+        arrowNext_.addEventListener('click', () => {
+            slideNext();
+        });
+
+        // Свайп слайдов тач-событиями
+
+        window_.addEventListener('touchstart', (e) => {
+            startPoint = e.changedTouches[0].pageX;
+        });
+
+        window_.addEventListener('touchmove', (e) => {
+            swipeAction = e.changedTouches[0].pageX - startPoint;
+            field_.style.transform = `translateX(${swipeAction + (-(cards_[0].scrollWidth + getCompStyle(cards_[0], 'marginRight')) * sliderCounter)}px)`;
+        });
+
+        window_.addEventListener('touchend', (e) => {
+            endPoint = e.changedTouches[0].pageX;
+            if (Math.abs(startPoint - endPoint) > 50) {
+                arrowNext_.classList.remove(arrowClass);
+                arrowPrev_.classList.remove(arrowClass);
+                if (endPoint < startPoint) {
+                    slideNext();
+                } else {
+                    slidePrev();
+                }
+            } else {
+                field_.style.transform = `translateX(-${(cards_[0].scrollWidth + getCompStyle(cards_[0], 'marginRight')) * sliderCounter}px)`;
+            }
+        });
+    }
+    slider(
+        '.comments__window',
+        '.comments__field',
+        '.comments__card',
+        false,
+        false,
+        false,
+        '.comments__arrow--prev',
+        '.comments__arrow--next',
+        'comments__arrow--inactive',
+        '.comments__progress__inner'
+    );
+
+
+    // функция для модалки
+
+    function calcScroll() {
+        let div = document.createElement('div');
+        
+        div.style.width = '50px';
+        div.style.height = '50px';
+        div.style.overflowY = 'scroll';
+        div.style.visibility = 'hidden';
+        
+        document.body.appendChild(div);
+        let scarollWidth = div.offsetWidth - div.clientWidth;
+        div.remove();
+        
+        return scarollWidth;
+    }
+
+    let scrollWidth = calcScroll();
+
+    function modal(modal, modalActiveClass, triggers, modalClose) {
+        const triggers_ = document.querySelectorAll(triggers),
+                modal_ = document.querySelector(modal),
+                modalClose_ = document.querySelector(modalClose);
+
+        if (triggers_.length > 0) {
+            triggers_.forEach(item => {
+                item.addEventListener('click', () => {
+                    modal_.classList.add(modalActiveClass);
+                    document.body.style.overflow = 'hidden';
+                    document.body.style.marginRight = `${scrollWidth}px`;
+                });
+            });
+
+            modalClose_.addEventListener('click', () => {
+                modal_.classList.remove(modalActiveClass);
+                document.body.style.overflow = '';
+                document.body.style.marginRight = '0px';
+            });
+
+            modal_.addEventListener('click', (e) => {
+                if (e.target.classList.contains('modal__container')) {
+                    modal_.classList.remove(modalActiveClass);
+                    document.body.style.overflow = '';
+                    document.body.style.marginRight = '0px';
+                }
+            });
+        }
+    }
+
+    modal('.modal-main', 'modal--active', '[data-modal]', '.modal-main__close');
+
 
 })

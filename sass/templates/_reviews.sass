@@ -1,0 +1,41 @@
+.reviews
+    padding-top: 305px
+    background: url(../img/reviews/bg.png) no-repeat center top, linear-gradient(to bottom, transparent 245px, #D9EDF7 245px)
+    margin-top: -100px
+    padding-bottom: 134px
+    &__title
+        margin-bottom: 80px
+    &__card
+        width: 100%
+        max-width: 363px
+        height: 425px
+        overflow: hidden
+        display: flex
+        justify-content: center
+        align-items: center
+        position: relative
+        &::after
+            content: ''
+            position: absolute
+            z-index: 2
+            left: 0
+            right: 0
+            top: 0
+            bottom: 0
+            background: rgba(0, 0, 0, 0.5)
+        &__img
+            position: relative
+            z-index: 1
+            max-width: none
+            object-fit: cover
+        &__play
+            position: absolute
+            z-index: 3
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%)
+            width: 155px
+            height: 155px
+            border-radius: 50%
+            background: url(../img/reviews/play.png) no-repeat calc(50% + 5px) center, #0385CA
+            cursor: pointer

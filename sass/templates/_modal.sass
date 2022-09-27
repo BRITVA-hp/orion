@@ -10,6 +10,12 @@
     justify-content: center
     overflow: auto
     background: rgba(0, 0, 0, 0.6)
+    opacity: 0
+    visibility: hidden
+    transition: 0.3s
+    &--active
+        opacity: 1
+        visibility: visible
     &__container
         min-height: 100%
         display: flex
@@ -17,3 +23,110 @@
         align-items: center
         width: 100%
         padding: 10px
+    &-main
+        &__button
+            width: 290px
+        &__checkbox
+            display: none
+            &:checked + .modal-main__agree__ok
+                background: url(../img/modal/ok.png) no-repeat center, #FFFFFF
+        &__agree
+            display: block
+            margin-bottom: 40px
+            width: 100%
+            max-width: 356px
+            padding-left: 42px
+            position: relative
+            cursor: pointer
+            &__ok
+                display: block
+                width: 20px
+                height: 20px
+                background: #FFFFFF
+                border-radius: 3px
+                position: absolute
+                left: 0
+                top: 0
+            &__text
+                font-style: normal
+                font-weight: normal
+                font-size: 20px
+                line-height: 100%
+                a
+                    color: #fff
+        &__row
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+        &__input
+            display: block
+            width: 100%
+            background: #FFFFFF
+            border-radius: 11px
+            border: none
+            padding: 18px 30px
+            font-family: 'Opinion'
+            font-style: normal
+            font-weight: 300
+            font-size: 25px
+            line-height: 100%
+            text-transform: uppercase
+            color: rgba(14, 14, 14, 0.5)
+            &:focus
+                outline: none
+        &__input-group
+            position: relative
+            width: 100%
+            max-width: 356px
+            margin-bottom: 25px
+        &__label
+            font-style: normal
+            font-weight: normal
+            font-size: 20px
+            line-height: 100%
+            display: block
+            margin-bottom: 12px
+        &__title
+            font-family: 'Opinion'
+            font-style: normal
+            font-weight: 300
+            font-size: 60px
+            line-height: 100%
+            text-transform: uppercase
+            margin-bottom: 45px
+        &__close
+            position: absolute
+            cursor: pointer
+            top: 45px
+            right: 65px
+        &__dialog
+            padding: 8px
+            background: #0385CA
+            border-radius: 40px
+            width: 100%
+            max-width: 950px
+        &__content
+            border: 2px dashed #FFFFFF
+            border-radius: 40px
+            padding: 45px 90px
+            color: #fff
+            position: relative
+            background: url(../img/modal/img.png) no-repeat calc( 100% - 50px ) calc( 100% - 50px )
+    &-video
+        &__container
+            position: relative
+            padding: 0
+        &__dialog
+            position: relative
+            z-index: 1
+        &__video
+            display: block
+            margin: auto
+            max-width: 100%
+            height: auto
+        &__close
+            position: absolute
+            z-index: 2
+            top: 20px
+            right: 20px
+            cursor: pointer
